@@ -13,7 +13,8 @@
 <body>
     <?php 
     //les variables du formulaire vide
-        $nom = $pswd = $pswd2 = $courriel = $image = $sexe = $dateNaissance = $transport1 = $transport2 = $transport3 = $transport4 ="";
+        $nom = $pswd = $pswd2 = $courriel = $image = $sexe = $dateNaissance = "";
+        $transport1 = $transport2 = $transport3 = $transport4 = false;
     //les variables d'erreurs vides
         $nomErreur = $pswdErreur = $pswd2Erreur = $courrielErreur = $imageErreur = $sexeErreur = $dateNaissanceErreur = $transport1Erreur = $transport2Erreur = $transport3Erreur = $transport4Erreur ="";
     //La variable qui permet de savoir s'il y a au moins une erreur dans le formulaire
@@ -75,12 +76,38 @@
                 $erreur = true;
             }
         }
+
+        //transport
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "POST";
 
-            if(empty($_POST[''])){
-                $ = "Le sexe est requis";
-                $erreur = true;
+            if(empty($_POST['transport1'])){
+                $transport1Erreur = "Le moyen de transport est requis";
+                $validationTransport = true;
+            }
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            echo "POST";
+
+            if(empty($_POST['transport2'])){
+                $transport2Erreur = "Le moyen de transport est requis";
+                $validationTransport = true;
+            }
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            echo "POST";
+
+            if(empty($_POST['transport3'])){
+                $transport3Erreur = false;
+                $validationTransport = true;
+            }
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            echo "POST";
+
+            if(empty($_POST['transport4'])){
+                $transport4Erreur = "Le moyen de transport est requis";
+                $validationTransport = true;
             }
         }
 

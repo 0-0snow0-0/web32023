@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    //1-récupérer le ID
+    //2-récuperer le data 
+    //3-afficher le data dans le formulaire
+    //4-Submit et valider le formulaire (ressemble à ajouter)
+    $id =$_Get
     
+    
+    ?>
 </body>
 </html>
